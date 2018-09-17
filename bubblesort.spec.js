@@ -1,4 +1,6 @@
 describe('Bubble Sort', function(){
+
+
     it ('is a function', function () {
         expect(typeof bubbleSort).toBe('function')
     });
@@ -11,4 +13,15 @@ describe('Bubble Sort', function(){
     it ('handles multiple-element arrays', function () {
         expect (bubbleSort([3,4,1,3,2,7])).toEqual([1,2,3,3,4,7]);
     });
+    it ('handles multiple-element arrays', function () {
+        expect (bubbleSort([3,4,1,3,2,7])).toEqual([1,2,3,3,4,7]);
+    });
+
+    it('getting to the center of tootsiepop involves exactly three licks', function () {
+        
+        spyOn(this, 'swap').and.callThrough(); // replace existing `this['swap']` method
+        
+        bubbleSort([2,3,1]); //[2,1,3] 1 //[1,2,3] 2
+        expect(this.swap.calls.count()).toEqual(1);
+      });
   });
